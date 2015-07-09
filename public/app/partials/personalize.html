@@ -1,0 +1,117 @@
+        <!-- Main content -->
+        <section class="content">
+
+          <div class='row'>
+            <div class='col-md-12'>
+
+
+
+
+              <div class="box box-primary">
+                <div class="box-header">
+                  <h3 class="box-title">Strings Localization</h3>
+                </div><!-- /.box-header -->
+                <!-- form start -->
+                <form role="form">
+                  <div class="box-body">
+                    
+                    <div class="form-group">
+                      <p class="help-block">Site Title</p>
+                      <input type="text" class="form-control" ng-model="customization.siteTitle">
+                    </div>
+
+                    <div class="form-group">
+                      <p class="help-block">Leave us your comment</p>
+                      <input type="text" class="form-control" ng-model="customization.leaveUsYourComment">
+                    </div>
+
+                    <div class="form-group">
+                      <p class="help-block">Search by name</p>
+                      <input type="text" class="form-control" ng-model="customization.searchByName">
+                    </div>
+
+                    <div class="form-group">
+                      <p class="help-block">Or pick a predefined search</p>
+                      <input type="text" class="form-control" ng-model="customization.pickAPredefinedSearch">
+                    </div>
+
+                    <div class="form-group">
+                      <p class="help-block">Timeline</p>
+                      <input type="text" class="form-control" ng-model="customization.timeline">
+                    </div>
+
+                    <div class="form-group">
+                      <p class="help-block">[timelineCaption] Muestra los recorridos en la función pública de de los funcionarios seleccionados</p>
+                      <input type="text" class="form-control" ng-model="customization.timelineCaption">
+                    </div>
+
+                    <div class="form-group">
+                      <p class="help-block">Stats</p>
+                      <input type="text" class="form-control" ng-model="customization.stats">
+                    </div>
+
+                    <div class="form-group">
+                      <p class="help-block">[statsCaption] Comparación y estadísticas de los funcionarios seleccionados</p>
+                      <input type="text" class="form-control" ng-model="customization.statsCaption  ">
+                    </div>
+
+                  </div><!-- /.box-body -->
+
+                </form>
+              </div><!-- /.box -->
+
+
+              <div class='box box-info'>
+                <div class='box-header'>
+                  <h3 class='box-title'>Predefined Searches</h3>
+                </div><!-- /.box-header -->
+                <div class='box-body pad'>
+                  <form>
+                    <div ui-ace="{  mode: 'json' }" ng-model="customization.predefinedSearches"></div>
+                  </form>
+                </div>
+              </div><!-- /.box -->
+
+              <div class='box box-info'>
+                <div class='box-header'>
+                  <h3 class='box-title'>Follow button code</h3>
+                </div><!-- /.box-header -->
+                <div class='box-body pad'>
+                  <form>
+                    <textarea ckeditor="editorOptions" ng-model="customization.followButton"></textarea>
+                  </form>
+                </div>
+              </div><!-- /.box -->
+
+              <div class='box box-info'>
+                <div class='box-header'>
+                  <h3 class='box-title'>Footer - Left</h3>
+                </div><!-- /.box-header -->
+                <div class='box-body pad'>
+                  <form>
+                    <textarea ckeditor="editorOptions" ng-model="customization.footerLeft"></textarea>
+                  </form>
+                </div>
+              </div><!-- /.box -->
+
+              <div class='box box-info'>
+                <div class='box-header'>
+                  <h3 class='box-title'>Footer - Right</h3>
+                </div><!-- /.box-header -->
+                <div class='box-body pad'>
+                  <form>
+                    <textarea ckeditor="editorOptions" ng-model="customization.footerRight"></textarea>
+                  </form>
+                </div>
+              </div><!-- /.box -->
+
+
+              <div class="box box-primary">
+                <div class="box-footer">
+                  <button type="submit" ng-click="save()" class="btn btn-primary">Save</button>
+                </div>
+              </div><!-- /.box -->
+
+            </div><!-- /.col-->
+          </div><!-- ./row -->
+        </section><!-- /.content -->

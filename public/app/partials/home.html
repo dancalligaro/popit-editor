@@ -1,0 +1,52 @@
+<div class="row" ng-show="myinfo">
+<div class="col-xs-12">
+
+  <div class="box box-solid">
+  <div class="box-header with-border">
+    <h3 class="box-title">Instance Info</h3>
+  </div><!-- /.box-header -->
+  <div class="box-body">
+    <dl class="dl-horizontal">
+      <dt>Cargografías Instance</dt>
+      <dd><a href="http://{{bootstrapData.cargoBaseUrl}}/{{myinfo.instanceName}}" target="_blank">http://{{bootstrapData.cargoBaseUrl}}/{{myinfo.instanceName}}</a></dd>
+      <dt>Popit Instance</dt>
+      <dd><a href="http://{{myinfo.popitUrl}}.popit.mysociety.org" target="_blank">http://{{myinfo.popitUrl}}.popit.mysociety.org</a></dd>
+      <dt>Contact email</dt>
+      <dd>{{myinfo.email}}</dd>
+    </dl>
+  </div><!-- /.box-body -->
+  </div>
+
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-12">
+
+  <div class="box box-solid">
+  <div class="box-header with-border">
+    <h3 class="box-title">Update your instance</h3>
+  </div><!-- /.box-header -->
+  <div class="box-body">
+    
+    <p>Running the updater will bring your cargografías instance up to date with the data in your popit instance </p>
+
+    <div class="form-group">
+      <input class="btn btn-primary" type="button" value="Update Data" ng-click="updateInstance()" />
+    </div>
+
+    <div class="progress">
+      <div class="progress-bar progress-bar-primary progress-bar-striped" ng-class="{active: progress < 100}" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%">
+        <span class="sr-only">40% Complete (success)</span>
+      </div>
+    </div>
+
+    <ul>
+      <li ng-repeat="item in responseLines">{{item}}</li>
+    </ul>
+
+  </div><!-- /.box-body -->
+  </div>
+
+</div>
+</div>

@@ -1,0 +1,13 @@
+
+.ace_editor { 
+  height: 200px; 
+}
+
+.row-person-item{
+	margin-bottom: 20px;
+}
+
+.person-divider{
+	border-top: solid 2px #ccc;
+	margin: 0px 5px 15px;
+}
