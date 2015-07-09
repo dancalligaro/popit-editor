@@ -17,7 +17,7 @@ angular.module('cargoNgApp')
  		loadSearch();
  	};
 
- 	$scope.openEdit = function(itemId){
+ 	$scope.openEdit = function(item){
 
 		var modalInstance = $modal.open({
 	      animation: true, //$scope.animationsEnabled,
@@ -25,10 +25,17 @@ angular.module('cargoNgApp')
 	      controller: 'PersonEditController',
 	      //size: size,
 	      resolve: {
-	        items: function () {
-	          return $scope.items;
+	        item: function () {
+	          return item;
 	        }
 	      }
+	    });
+
+	    modalInstance.result.then(function (selectedItem) {
+	      loadSearch();
+	      //$scope.selected = selectedItem;
+	    }, function () {
+	    	//modal closed
 	    });
 
  	};

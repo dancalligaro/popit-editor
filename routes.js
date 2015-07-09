@@ -54,6 +54,7 @@ function init(app){
 
   app.get('/api/persons', controllers.getPersons)
 
+  app.put('/proxy/:collection/:id', controllers.proxyPUT)
 
 }
 

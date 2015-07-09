@@ -332,3 +332,36 @@ module.exports.getPersons = function(req, res){
 	request('') //REquest to popti
 
 }
+
+module.exports.proxyPUT = function(req, res){
+	var collection = req.params.collection
+	var id = req.params.id
+	var url = "https://cargografias.popit.mysociety.org/api/v0.1/" + collection + "/" + id;
+
+	// NODE_DEBUG=request
+
+	var options = {
+	  url: url,
+	  method: 'PUT',
+	  body: req.body,
+	  json: true,
+	  headers: {
+	    'Apikey': process.env.POPIT_KEY
+	  }
+	}
+
+	console.log('object to put', options)
+
+	request.debug = true
+	request(options, function(err,httpResponse,body){
+		if(err){
+			console.log(err)
+			res.send('err');
+		}else{
+			console.log(body);
+			res.send('ok')
+		}
+	})
+
+
+}
