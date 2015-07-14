@@ -336,7 +336,7 @@ module.exports.getPersons = function(req, res){
 module.exports.proxyPUT = function(req, res){
 	var collection = req.params.collection
 	var id = req.params.id
-	var url = "https://cargografias.popit.mysociety.org/api/v0.1/" + collection + "/" + id;
+	var url = "https://cargo2.popit.mysociety.org/api/v0.1/" + collection + "/" + id;
 
 	// NODE_DEBUG=request
 

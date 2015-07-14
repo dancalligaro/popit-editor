@@ -40,9 +40,30 @@ angular.module('cargoNgApp')
 
  	};
 
+ 	$scope.openEditMembership = function(membership){
+		var modalInstance = $modal.open({
+	      animation: true, //$scope.animationsEnabled,
+	      templateUrl: '/app/partials/membershipEdit.html',
+	      controller: 'MembershipEditController',
+	      //size: size,
+	      resolve: {
+	        item: function () {
+	          return membership;
+	        }
+	      }
+	    });
+
+	    modalInstance.result.then(function (selectedItem) {
+	      loadSearch();
+	      //$scope.selected = selectedItem;
+	    }, function () {
+	    	//modal closed
+	    });
+ 	}
+
  	function loadSearch(){
 
- 		var url = "https://cargografias.popit.mysociety.org/api/v0.1/search/persons?"
+ 		var url = "https://cargo2.popit.mysociety.org/api/v0.1/search/persons?"
  		url += "page=" + $scope.page;
  		url += "&q=name:" + $scope.search.name;
 

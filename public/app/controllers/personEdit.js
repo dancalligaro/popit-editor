@@ -39,17 +39,12 @@ angular.module('cargoNgApp')
  			] 
  		}
 
-
  		var url = "/proxy/persons/" + item.id;
- 		//console.log('saving this person', url, personToSave)
  		
  		$http({
  			method: 'PUT',
  			url: url, 
  			data: personToSave, 
-			headers: {
- 				'ApiKey': window.__bootstrapData.popitKey
- 			}
  		}).success(function(){
 	 		$modalInstance.close();
  		}).error(function(){

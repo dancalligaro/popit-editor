@@ -95,11 +95,6 @@
                 <i class="fa fa-envelope"></i> <span>Persons</span>
               </a>
             </li>
-            <li ng-class="{active: '/posts' == currentPath}">
-              <a href="#/posts">
-                <i class="fa fa-envelope"></i> <span>Posts</span>
-              </a>
-            </li>
             <li ng-class="{active: '/organizations' == currentPath}">
               <a href="#/organizations">
                 <i class="fa fa-envelope"></i> <span>Organizations</span>
@@ -185,6 +180,8 @@
     <script src="/app/controllers/persons.js"></script>
     <script src="/app/controllers/organizations.js"></script>
     <script src="/app/controllers/personEdit.js"></script>
+    <script src="/app/controllers/organizationEdit.js"></script>
+    <script src="/app/controllers/membershipEdit.js"></script>
 
     <script>
       window.__bootstrapData = <%- bootstrapData %>

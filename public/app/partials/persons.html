@@ -77,14 +77,16 @@
 		          <th>End</th>
 		          <th>Role</th>
 		          <th>Label</th>
-		          <th>Cargonominal</th>
+		          <th></th>
 		        </tr>
 		        <tr ng-repeat="m in row.memberships">
 		          <td>{{m.start_date}}</td>
 		          <td>{{m.end_date}}</td>
 		          <td>{{m.role}}</td>
 		          <td>{{m.label}}</td>
-		          <td>{{m.cargonominal}}</td>
+		          <td>
+		          	<button ng-click="openEditMembership(m)" class="btn btn-block btn-primary btn-xs">Edit</button>
+		          </td>
 		        </tr>
 		      </tbody></table>
 

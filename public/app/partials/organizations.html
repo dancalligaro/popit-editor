@@ -1,5 +1,101 @@
-<h1>Organizations</h1>
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+          	Organizations
+          </h1>
+          <!-- ol class="breadcrumb">
+            <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+          </ol -->
+        </section>
 
-<p>
-	
-</p>
+        <!-- Main content -->
+        <section class="content">
+
+
+<div class="box box-primary">
+<div class="box-header">
+  <h3 class="box-title">Search</h3>
+</div><!-- /.box-header -->
+<!-- form start -->
+<form role="form">
+  <div class="box-body">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" ng-model="search.name">
+    </div>
+  </div><!-- /.box-body -->
+  <div class="box-footer">
+    <button type="submit" class="btn btn-primary" ng-click="doSearch()">Search</button>
+  </div>
+</form>
+</div>
+
+<div class="box" ng-hide="rows.length">
+    <div class="box-header">
+		<h3 class="box-title">No Results</h3>
+	</div>
+</div>	
+
+
+<div class="box" ng-show="rows.length">
+    <div class="box-header">
+      <h3 class="box-title">Results</h3>
+      <div class="box-tools">
+		<ul class="pagination pagination-sm no-margin pull-right">
+			<li ng-repeat="p in pages" ng-class="{active: p===page }"><a ng-click="goToPage(p)">{{p}}</a></li>
+		</ul>
+      </div>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="dataTables_info" id="example1_info">Showing {{from}} to {{to}} of {{total}} entries</div>
+			</div>
+		</div>
+
+    </div><!-- /.box-header -->
+
+    <div class="box-body">
+
+		<div class="row row-person-item" ng-repeat="row in rows">
+			<div class="person-divider"></div>
+			<div class="col-md-4">
+				<div>
+					<div class="btn-group">
+						<button ng-click="openEdit(row)" class="btn btn-block btn-primary btn-xs">Edit</button>
+					</div>
+				</div>
+				<div class="person-idlink"><a target="_blank" href="https://cargo2.popit.mysociety.org/organizations/{{row.id}}">{{row.id}}</a></div>
+				<div class="person-name">{{row.name}}</div>
+			</div>
+			<div class="col-md-8">
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="dataTables_info" id="example1_info">Showing {{from}} to {{to}} of {{total}} entries</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="dataTables_paginate paging_bootstrap">
+					<ul class="pagination pagination-sm no-margin pull-right">
+						<li ng-repeat="p in pages" ng-class="{active: p===page }"><a ng-click="goToPage(p)">{{p}}</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+    </div><!-- /.box-body -->
+  </div>
+
+
+
+
+
+        </section><!-- /.content -->
+
+
+
+
